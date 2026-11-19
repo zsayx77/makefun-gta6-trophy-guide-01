@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-checklist.jpg","note":"Top of the page: header, progress (12/55 earned), filters, export/import, platinum guide open","path":"/","viewport":{"height":800,"width":1280}},{"file":"2-guide-sources.jpg","note":"The Shootist guide open with its steps and named sources","path":"/","viewport":{"height":800,"width":1280}},{"file":"3-roadmap.jpg","note":"Roadmap to Platinum tab, stage 1 with per-stage progress","path":"/","viewport":{"height":800,"width":1280}},{"file":"4-spoiler-missable.jpg","note":"Spoiler setting on, missable filter active: hidden story trophies and missable flags","path":"/","viewport":{"height":800,"width":1280}}]

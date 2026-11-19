@@ -3,23 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: roadmap to the platinum, missable flags, and a cited guide for every trophy.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div>
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="tagline">Every trophy, its official name and grade, a guide in our own words with its sources, and a tracker that remembers your progress — all offline.</p>
+  </div>
+  <div class="progress-card" id="progress-card">
+    <p class="progress-count"><strong id="earned-count">0</strong> / 55 earned</p>
+    <div class="progress-bar" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+    <p class="progress-note" id="progress-note">Platinum: Vice Got a Price! — 54 to go.</p>
+    <p class="progress-breakdown" id="progress-breakdown"></p>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" class="tab active" data-view="checklist" aria-current="page">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-view="about">Sources &amp; how to use</button>
+</nav>
+
+<section id="view-checklist" class="view">
+  <div class="controls">
+    <label class="search">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+    <fieldset class="kind-filters" aria-label="Filter by kind">
+      <legend>Kind</legend>
+      <button type="button" data-kind="all" class="chip active">All 55</button>
+      <button type="button" data-kind="story" class="chip">Story</button>
+      <button type="button" data-kind="missable" class="chip">Missable</button>
+      <button type="button" data-kind="collectibles" class="chip">Collectibles</button>
+      <button type="button" data-kind="activities" class="chip">Activities</button>
+      <button type="button" data-kind="online" class="chip">Online</button>
+    </fieldset>
+    <label class="grade-filter">Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="grade-filter">Show
+      <select id="show">
+        <option value="all">All trophies</option>
+        <option value="todo">Not earned yet</option>
+        <option value="earned">Earned</option>
+      </select>
+    </label>
+    <label class="toggle"><input id="spoilers" type="checkbox"> Hide story spoilers</label>
+  </div>
+  <div class="controls tools">
+    <button id="export" type="button">Export progress (.json)</button>
+    <label class="import-btn">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+    <button id="reset" type="button">Reset progress</button>
+    <p class="save-note" id="save-note">Progress saves automatically in this browser.</p>
+  </div>
+  <p class="result-count" id="result-count"></p>
+  <ul class="trophy-list" id="trophy-list"></ul>
+  <p class="empty" id="empty" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+</section>
+
+<section id="view-roadmap" class="view" hidden>
+  <p class="intro">The road to the platinum, in the order this guide recommends. Each stage lists the trophies it covers and the counts the official descriptions give — 4 chapters, 8 stranger strands, 250 stunts, 42 Shooting Range challenges, 100 WAiNK It locations, 100 vehicles, 3 card sets, 5 bank vaults, 50 challenges.</p>
+  <ol class="roadmap" id="roadmap"></ol>
+</section>
+
+<section id="view-about" class="view" hidden>
+  <h2>How this guide was made</h2>
+  <p>Every trophy's <strong>name, description and grade</strong> is shown exactly as PlayStation publishes it, as listed by Exophase and PSNProfiles before this guide was written. Every <strong>guide</strong> is written in this guide's own words. Where a guide gives a specific location or step, it says where the fact comes from; where no source publishes the detail — for example the number of meditation spots, or what exactly triggers “Personal Best” — the guide says so instead of inventing one. A cited guide beats an uncited one, however detailed.</p>
+  <h2>How to use the tracker</h2>
+  <ul>
+    <li>Tick a trophy when you earn it. Ticks are saved in this browser (localStorage) and survive reloads.</li>
+    <li><strong>Export progress</strong> downloads a small JSON file; <strong>Import progress</strong> loads one back. Keep the export as a backup before clearing browser data.</li>
+    <li><strong>Hide story spoilers</strong> replaces the names and descriptions of story trophies you have not earned yet with a hidden placeholder. Earned trophies always show.</li>
+    <li><strong>Missable</strong> flags the three trophies tied to a one-time moment: two story choices and one stealth attempt. Save before story choices.</li>
+  </ul>
+  <h2>Offline</h2>
+  <p>This guide is plain static files. It loads nothing from the network, uses no external fonts or images, and works with the network off.</p>
+  <p class="fineprint">An unofficial fan guide. Grand Theft Auto, GTA and Rockstar Games are trademarks of their owners; this guide uses no Rockstar logo, artwork, box art or game screenshots.</p>
+</section>
+
+<footer>
+  <p>Leonida Trophy Guide — an unofficial offline guide for GTA VI on PS5. Names, descriptions and grades are PlayStation's official list; guides are this site's own words, with sources named beside each one.</p>
+</footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
